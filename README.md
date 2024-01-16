@@ -27,13 +27,75 @@ Welcome to the Ping-Pong Game! This simple and fun game is implemented in JavaSc
 
 ## Code Highlights
 
+  
+
 ### 1. Field and Line Drawing
+ 
+	// DRAW FIELD
+    
+    canvasCtx.fillStyle =  "#286047"
+    
+    canvasCtx.fillRect(0, 0, this.w, this.h)
+    
+    // DRAW CENTRAL LINE
+    
+    canvasCtx.fillStyle =  "#ffffff"
+    
+    canvasCtx.fillRect((field.w /  2  -  this.w /  2), 0, this.w, field.h)
 
-```javascript
-// DRAW FIELD
-canvasCtx.fillStyle = "#286047"
-canvasCtx.fillRect(0, 0, this.w, this.h)
 
-// DRAW CENTRAL LINE
-canvasCtx.fillStyle = "#ffffff"
-canvasCtx.fillRect((field.w / 2 - this.w / 2), 0, this.w, field.h)
+### 2. Ball Movement and Collision Detection
+
+        _calcPosition: function () {
+        // Ball and paddle collision logic
+        // ...
+    
+        // Ball and field boundary collision logic
+        // ...
+    },
+    
+    _reverseY: function () {
+        this.directionY *= -1
+    },
+    _reverseX: function () {
+        this.directionX *= -1
+    },
+    
+    _speedUp: function () {
+        this.speed += 3
+    },
+    
+    _pointUp: function () {
+        this.x = field.w / 2
+        this.y = field.h / 2
+        this._speedUp()
+        rightPaddle.speedUp()
+    },
+    
+    _move: function () {
+        this.x += this.directionX * this.speed
+        this.y += this.directionY * this.speed
+    }
+### 3. Right Paddle Movement and Speed-Up
+
+    _draw: function () {
+        canvasCtx.fillRect(this.x, this.y, this.w, this.h)
+        this._move()
+    },
+    
+    _move: function () {
+        if (this.y + this.h / 2 < ball.y + ball.r) {
+            this.y += this.speed
+        } else {
+            this.y -= this.speed
+        }
+    },
+    
+    speedUp: function () {
+        this.speed += 2
+    }
+
+## Enjoy the Game!
+
+Feel free to explore and modify the code to enhance the game further. Have fun playing Ping-Pong!
+
