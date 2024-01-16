@@ -19,11 +19,11 @@ Welcome to the Ping-Pong Game! This simple and fun game is implemented in JavaSc
 
 ## Screenshots
 
-![Gameplay Screenshot]((<img/Captura de tela 2024-01-15 211506.png>))
+![Gameplay Screenshot](img/Captura%20de%20tela%202024-01-15%20211506.png)
 
 ## Click Here to Play
 
-[Click Here](#) to open the game in another tab and start playing!
+[Click Here](https://fs-kayky.github.io/Ping-Pong-Game/) to open the game in another tab and start playing!
 
 ## Code Highlights
 
